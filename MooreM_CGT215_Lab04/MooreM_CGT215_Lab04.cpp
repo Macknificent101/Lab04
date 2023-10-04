@@ -12,6 +12,15 @@ void printMenu() {
 	cout << "Your Selection: ";
 }
 
+int power(int base, int poweree) {
+	int result;
+	result = base;
+	for (int i = 1; i < poweree; i++) {
+		result = result * base;
+	}
+	return result;
+}
+
 void factorial() {
 	// I recommend writing your factorial code here
 	int length;
@@ -87,15 +96,6 @@ void geometric() {
 		}
 		cout << " = " << result << endl;
 	}
-}
-
-int power(int base, int poweree) {
-	int result;
-	result = base;
-	for (int i = 1; i < poweree; i++) {
-		result = result * base;
-	}
-	return result;
 }
 
 int main() {
