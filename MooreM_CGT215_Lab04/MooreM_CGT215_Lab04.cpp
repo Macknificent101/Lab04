@@ -39,7 +39,7 @@ void arithmetic() {
 	int start;
 	int interval;
 	int result;
-	result = 1;
+	result = 0;
 	cout << "Please enter a starting number: ";
 	cin >> start;
 	cout << "Please enter a number to add each time: ";
@@ -52,6 +52,7 @@ void arithmetic() {
 	}
 	else {
 		cout << start;
+		result = start;
 		for (int i = 1; i < length; i++) {
 			cout << " + " << (start + (i * interval));
 			result = result + (start + (i * interval));
@@ -66,7 +67,7 @@ void geometric() {
 	int start;
 	int interval;
 	int result;
-	result = 1;
+	result = 0;
 	cout << "Please enter a starting number: ";
 	cin >> start;
 	cout << "Please enter a number to multiply by each time: ";
@@ -79,12 +80,22 @@ void geometric() {
 	}
 	else {
 		cout << start;
+		result = start;
 		for (int i = 1; i < length; i++) {
-			cout << " + " << (start * (interval ^ i));
-			result = result + (start * (interval ^ i));
+			cout << " + " << (start * (power(interval, i)));
+			result = result + (start * (power(interval, i)));
 		}
 		cout << " = " << result << endl;
 	}
+}
+
+int power(int base, int poweree) {
+	int result;
+	result = base;
+	for (int i = 1; i < poweree; i++) {
+		result = result * base;
+	}
+	return result;
 }
 
 int main() {
